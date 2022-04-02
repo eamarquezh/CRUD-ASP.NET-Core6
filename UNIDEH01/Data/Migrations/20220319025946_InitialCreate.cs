@@ -53,7 +53,7 @@ namespace UNIDEH01.Data.Migrations
                     idalumnos = table.Column<int>(type: "int", nullable: false),
                     idcurso = table.Column<int>(type: "int", nullable: false),
                     unidad = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    promedio = table.Column<decimal>(type: "decimal(2,2)", nullable: false)
+                    promedio = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

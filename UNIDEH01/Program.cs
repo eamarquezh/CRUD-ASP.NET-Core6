@@ -3,7 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using UNIDEH01.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+var configuration = builder.Configuration;
 
+services.AddAuthentication().AddGoogle(googleOptions =>
+{
+    googleOptions.ClientId = "1097738861404-8o23l9c6nqc5cdc7l0ca968livsr7rfh.apps.googleusercontent.com";
+    googleOptions.ClientSecret = "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";
+});
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
